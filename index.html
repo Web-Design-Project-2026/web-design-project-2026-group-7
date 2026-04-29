@@ -1,7 +1,322 @@
-</< HTML
-    <!DOCTYPE html>
-  <html>
-    <body>
-      <p>Test</p>
-    </body>
-  </html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Valborg Guide | Spring Fire Festival</title>
+    <!-- Google Fonts + Font Awesome -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- External CSS (AMANDA will edit this) -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- header / navigation -->
+    <header class="site-header">
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            <a href="index.html">Valborg<span>Guide</span></a>
+          </div>
+          <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#info">Info</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="map.html">Map</a></li>
+            <li><a href="food.html">Food</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- HOMEPAGE (HERO) SECTION -->
+      <section id="home" class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-text">
+              <h1>
+                Welcome the Spring<br />
+                with <span style="color: #e85d04">Fire & Community</span>
+              </h1>
+              <p>
+                Discover Valborg – Sweden's most vibrant celebration of light,
+                bonfires, and the arrival of spring. Join students and locals in
+                Jönköping for an unforgettable experience.
+              </p>
+              <a href="#events" class="btn-primary"
+                ><i class="fas fa-fire"></i> Explore events</a
+              >
+              <div class="hero-stats">
+                <div class="stat">
+                  <strong>✨ 81%</strong> <br />curious to learn
+                </div>
+                <div class="stat">
+                  <strong>📅 30 April</strong> <br />main celebration
+                </div>
+                <div class="stat">
+                  <strong>🔥 3+ events</strong> <br />bonfire & music
+                </div>
+              </div>
+            </div>
+            <div class="hero-illustration">
+              <i
+                class="fas fa-fire"
+                style="font-size: 5rem; color: #e85d04"
+              ></i>
+              <i
+                class="fas fa-tree"
+                style="font-size: 3rem; margin-left: 0.5rem"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INFO SECTION (What is Valborg + map preview) -->
+      <section id="info">
+        <div class="container">
+          <h2 class="section-title">What is Valborg? 🔥</h2>
+          <div class="info-grid">
+            <div class="info-card">
+              <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem">
+                Walpurgis Night tradition
+              </h3>
+              <p>
+                Valborg (Walpurgis Night) is a Swedish spring festival
+                celebrated on <strong>April 30th</strong>. Communities gather
+                around massive bonfires, listen to music, and welcome warmer
+                days. For international students, it’s a wonderful introduction
+                to Nordic culture.
+              </p>
+              <p style="margin-top: 1rem">
+                📊 <strong>Our UX research:</strong> 56.3% of international
+                students didn’t know about Valborg, but
+                <strong>87.5%</strong> would find a dedicated website useful.
+                That's why we built this guide — to make traditions accessible
+                and fun!
+              </p>
+              <p>
+                <i class="fas fa-users"></i> Target audience: International &
+                local students in Jönköping, young adults aged 20-30 seeking
+                events, food, and community.
+              </p>
+              <div
+                style="
+                  background: #ffe6c7;
+                  border-radius: 1rem;
+                  padding: 1rem;
+                  margin-top: 1.2rem;
+                "
+              >
+                <i class="fas fa-lightbulb"></i>
+                <strong>Did you know?</strong> The bonfire tradition symbolizes
+                warding off evil spirits and welcoming the light of spring.
+              </div>
+            </div>
+            <div class="map-preview">
+              <i
+                class="fas fa-map-marked-alt"
+                style="font-size: 2rem; color: var(--flame-orange, #e85d04)"
+              ></i>
+              <h3>📍 Main location</h3>
+              <p>Hälsoparken, Jönköping</p>
+              <div
+                class="map-placeholder"
+                aria-label="Map showing event area"
+                role="img"
+              >
+                <i
+                  class="fas fa-map"
+                  style="font-size: 3rem; color: #1e2a3e"
+                ></i>
+                <div
+                  style="
+                    background: #fef7e0;
+                    width: 100%;
+                    border-radius: 12px;
+                    padding: 0.3rem;
+                  "
+                >
+                  🗺️ Bonfire zone · Food stalls · Main stage
+                </div>
+                <i class="fas fa-location-dot" style="color: #e85d04"></i>
+                <span style="font-size: 0.8rem"
+                  >Meeting point: Park entrance</span
+                >
+              </div>
+              <button
+                class="btn-outline"
+                style="margin-top: 0.5rem"
+                onclick="
+                  alert(
+                    '📍 Address: Hälsoparken, 553 15 Jönköping. Follow signs to the bonfire area!',
+                  )
+                "
+              >
+                <i class="fas fa-directions"></i> Get directions
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EVENTS SECTION (Schedule with interactive buttons) -->
+      <section id="events">
+        <div class="container">
+          <h2 class="section-title">📅 Valborg Schedule & Events</h2>
+          <div class="event-list" id="eventListContainer">
+            <!-- Events will be injected here by JavaScript (main.js) -->
+            <!-- Or we can pre‑fill static HTML with data attributes -->
+          </div>
+          <p style="margin-top: 1rem; text-align: center; font-size: 0.85rem">
+            <i class="fas fa-calendar-plus"></i> Click "Add to Calendar" to save
+            events — share with friends!
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>
+          🔥 Valborg Guide – celebrating Swedish spring traditions for everyone
+          🌸
+        </p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem">
+          Designed with warmth & accessibility | based on user research &
+          testing
+        </p>
+        <p style="margin-top: 0.3rem">
+          <i class="fas fa-universal-access"></i> High contrast, readable fonts
+          & keyboard navigation
+        </p>
+      </div>
+    </footer>
+
+    <!-- External JavaScript (kabir can edit this) -->
+    <script src="js/main.js"></script>
+    <!-- Inline initialization to ensure events are loaded after DOM -->
+    <script>
+      // This inline script can be moved to main.js later.
+      // For now, it ensures events appear immediately.
+      document.addEventListener("DOMContentLoaded", function () {
+        // Events data (matching the personas and design doc)
+        const eventsData = [
+          {
+            id: 1,
+            title: "🎓 Valborg Student Event",
+            start: "20260430T150000",
+            end: "20260430T170000",
+            startReadable: "April 30, 15:00 – 17:00",
+            location: "Science Park, Jönköping",
+            description:
+              "Join the main celebraton with a traditional dinner, live music, and a vibrantstudent atmosphere in the sciencepark.",
+          },
+          {
+            id: 2,
+            title: "🎶 Valborg Music",
+            start: "20260430T180000",
+            end: "20260430T193000",
+            startReadable: "April 30, 18:00 – 19:00",
+            location: "Jönköping Hälsoparken",
+            description:
+              "Join the main Valborg celebration with live music, and a vibrant student atmosphere.",
+          },
+          {
+            id: 3,
+            title: "🔥 The Great Bonfire Lighting",
+            start: "20260430T210000",
+            end: "20260430T223000",
+            startReadable: "April 30, 19:00 – 21:30",
+            location: "Jönköping Hälsoparken",
+            description:
+              "The highlight of Valborg! Join hundreds as we light the massive bonfire, celebrate with music and community spirit.",
+          },
+        ];
+
+        const container = document.getElementById("eventListContainer");
+        if (container) {
+          container.innerHTML = "";
+          eventsData.forEach((ev) => {
+            const card = document.createElement("div");
+            card.className = "event-card";
+            card.innerHTML = `
+            <div class="event-header">
+              <div class="event-title">${ev.title}</div>
+              <div class="event-time"><i class="far fa-clock"></i> ${ev.startReadable}</div>
+            </div>
+            <div class="event-location"><i class="fas fa-map-marker-alt"></i> ${ev.location}</div>
+            <div class="event-desc">${ev.description}</div>
+            <div class="event-actions">
+              <button class="icon-btn add-calendar" data-id="${ev.id}"><i class="fas fa-calendar-plus"></i> Add to Calendar</button>
+              <button class="icon-btn share-event" data-id="${ev.id}"><i class="fas fa-share-alt"></i> Share Event</button>
+            </div>
+          `;
+            container.appendChild(card);
+          });
+
+          // Attach event listeners (if main.js doesn't already handle them)
+          document.querySelectorAll(".add-calendar").forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+              const id = parseInt(btn.getAttribute("data-id"));
+              const event = eventsData.find((e) => e.id === id);
+              if (event && window.downloadICS) {
+                window.downloadICS(event);
+              } else if (event) {
+                // Fallback ICS generator if main.js not loaded yet
+                function downloadICSFallback(ev) {
+                  const icsContent = [
+                    "BEGIN:VCALENDAR",
+                    "VERSION:2.0",
+                    "BEGIN:VEVENT",
+                    `SUMMARY:${ev.title}`,
+                    `DTSTART:${ev.start}`,
+                    `DTEND:${ev.end}`,
+                    `LOCATION:${ev.location}`,
+                    `DESCRIPTION:${ev.description}`,
+                    "END:VEVENT",
+                    "END:VCALENDAR",
+                  ].join("\r\n");
+                  const blob = new Blob([icsContent], {
+                    type: "text/calendar",
+                  });
+                  const link = document.createElement("a");
+                  link.href = URL.createObjectURL(blob);
+                  link.download = `Valborg_${ev.title.replace(/[^a-z0-9]/gi, "_")}.ics`;
+                  link.click();
+                  URL.revokeObjectURL(link.href);
+                  alert(`✅ "${ev.title}" added to your calendar!`);
+                }
+                downloadICSFallback(event);
+              }
+            });
+          });
+
+          document.querySelectorAll(".share-event").forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+              const id = parseInt(btn.getAttribute("data-id"));
+              const event = eventsData.find((e) => e.id === id);
+              if (event) {
+                const shareText = `🎉 ${event.title}\n📅 ${event.startReadable}\n📍 ${event.location}\n${event.description}`;
+                navigator.clipboard.writeText(shareText);
+                alert(`📋 Event details copied: ${event.title}`);
+              }
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
