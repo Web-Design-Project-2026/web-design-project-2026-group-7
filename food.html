@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Valpurgis Food</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- TOP BAR (same vibe as your image) -->
+    <header class="topbar">
+      <div class="logo"><span class="flame">🔥</span> VALPURGIS</div>
+    </header>
+
+    <!-- FIRE BACKGROUND HERO -->
+    <section class="hero"></section>
+
+    <!-- TITLE -->
+    <h1 class="title">Food & Drinks Nearby</h1>
+
+    <!-- SCROLL SECTION -->
+    <div class="scroll-wrapper">
+      <div class="scroll-container">
+        <div
+          class="card"
+          onclick="
+            openMenu('Snack Stand', ['Popcorn', 'Candy', 'Soda', 'Beer'])
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
+          />
+          <div class="card-text">
+            <h3>Snack Stand</h3>
+            <p>Popcorn · Drinks</p>
+          </div>
+        </div>
+
+        <div
+          class="card"
+          onclick="
+            openMenu('Burger Grill', [
+              'Cheeseburger',
+              'Fries',
+              'Cola',
+              'Hot Sauce',
+            ])
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1550547660-d9450f859349"
+          />
+          <div class="card-text">
+            <h3>Burger Grill</h3>
+            <p>Burgers · Drinks</p>
+          </div>
+        </div>
+
+        <div
+          class="card"
+          onclick="
+            openMenu('Hotdog Stand', ['Hotdog', 'Ketchup', 'Mustard', 'Soda'])
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1612392062798-0c5c1c1a4d6b"
+          />
+          <div class="card-text">
+            <h3>Hotdog Stand</h3>
+            <p>Hotdogs · Drinks</p>
+          </div>
+        </div>
+
+        <div
+          class="card"
+          onclick="
+            openMenu('Langos Wagon', [
+              'Classic Langos',
+              'Cheese',
+              'Garlic',
+              'Nutella',
+            ])
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9"
+          />
+          <div class="card-text">
+            <h3>Langos Wagon</h3>
+            <p>Langos · Snacks</p>
+          </div>
+        </div>
+
+        <div
+          class="card"
+          onclick="
+            openMenu('Coffee Cart', ['Espresso', 'Latte', 'Cappuccino', 'Tea'])
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"
+          />
+          <div class="card-text">
+            <h3>Coffee Cart</h3>
+            <p>Coffee · Tea</p>
+          </div>
+        </div>
+
+        <div
+          class="card"
+          onclick="
+            openMenu('Sweet Stand', [
+              'Waffles',
+              'Crepes',
+              'Chocolate',
+              'Ice Cream',
+            ])
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1505253213348-cd54c92b37a0"
+          />
+          <div class="card-text">
+            <h3>Sweet Stand</h3>
+            <p>Desserts · Candy</p>
+          </div>
+        </div>
+
+        <div
+          class="card"
+          onclick="
+            openMenu('Beer Tent', ['Lager', 'IPA', 'Cider', 'Soft Drinks'])
+          "
+        >
+          <img
+            src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b"
+          />
+          <div class="card-text">
+            <h3>Beer Tent</h3>
+            <p>Beer · Drinks</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MENU POPUP -->
+    <div id="menu" class="modal">
+      <div class="modal-box">
+        <span class="close" onclick="closeMenu()">&times;</span>
+        <h2 id="menuTitle"></h2>
+        <ul id="menuList"></ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
