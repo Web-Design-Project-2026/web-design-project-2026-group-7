@@ -2,154 +2,93 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Valpurgis Food</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valpurgis Valborg</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- TOP BAR -->
-    <header class="topbar">
-      <div class="logo"><span class="flame"></span> VALPURGIS</div>
+    <!-- HEADER -->
+    <header>
+      <div class="logo">VALPURGIS VALBORG</div>
+      <nav>
+        <a href="#">HOME</a>
+        <a href="#">INFO</a>
+        <a href="#">FOOD</a>
+        <a href="#">MAP</a>
+      </nav>
     </header>
 
-    <!-- FIRE BACKGROUND HERO -->
-    <section class="hero"></section>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="overlay"></div>
+      <h1>Food & Drinks Nearby</h1>
+    </section>
 
-    <!-- TITLE -->
-    <h1 class="title">Food & Drinks Nearby</h1>
-
-    <!-- SCROLL SECTION -->
-    <div class="scroll-wrapper">
+    <!-- SCROLLABLE FOOD ROW -->
+    <section class="food-section">
       <div class="scroll-container">
-        <div
-          class="card"
-          onclick="
-            openMenu('Snack Stand', ['Popcorn', 'Candy', 'Soda', 'Beer'])
-          "
-        >
-          <img
-            src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
-          />
-          <div class="card-text">
-            <h3>Snack Stand</h3>
-            <p>Popcorn · Drinks</p>
-          </div>
+        <!-- CARD TEMPLATE -->
+        <div class="food-card" onclick="openMenu('snack')">
+          <img src="snack-stand.jpg" />
+          <h3>Snack Stand</h3>
+          <p>Popcorn · Drinks</p>
         </div>
 
-        <div
-          class="card"
-          onclick="
-            openMenu('Burger Grill', [
-              'Cheeseburger',
-              'Fries',
-              'Cola',
-              'Hot Sauce',
-            ])
-          "
-        >
-          <img
-            src="https://images.unsplash.com/photo-1550547660-d9450f859349"
-          />
-          <div class="card-text">
-            <h3>Burger Grill</h3>
-            <p>Burgers · Drinks</p>
-          </div>
+        <div class="food-card" onclick="openMenu('street')">
+          <img src="street-food.jpg" />
+          <h3>Street Food</h3>
+          <p>Burgers · Drinks</p>
         </div>
 
-        <div
-          class="card"
-          onclick="
-            openMenu('Hotdog Stand', ['Hotdog', 'Ketchup', 'Mustard', 'Soda'])
-          "
-        >
-          <img
-            src="https://images.unsplash.com/photo-1612392062798-0c5c1c1a4d6b"
-          />
-          <div class="card-text">
-            <h3>Hotdog Stand</h3>
-            <p>Hotdogs · Drinks</p>
-          </div>
+        <div class="food-card" onclick="openMenu('hotdog')">
+          <img src="hotdog.jpg" />
+          <h3>Hot Dog Stand</h3>
+          <p>Hotdogs · Drinks</p>
         </div>
 
-        <div
-          class="card"
-          onclick="
-            openMenu('Langos Wagon', [
-              'Classic Langos',
-              'Cheese',
-              'Garlic',
-              'Nutella',
-            ])
-          "
-        >
-          <img
-            src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9"
-          />
-          <div class="card-text">
-            <h3>Langos Wagon</h3>
-            <p>Langos · Snacks</p>
-          </div>
+        <div class="food-card" onclick="openMenu('langos')">
+          <img src="langos.jpg" />
+          <h3>Langos Style</h3>
+          <p>Langos · Drinks</p>
         </div>
 
-        <div
-          class="card"
-          onclick="
-            openMenu('Coffee Cart', ['Espresso', 'Latte', 'Cappuccino', 'Tea'])
-          "
-        >
-          <img
-            src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"
-          />
-          <div class="card-text">
-            <h3>Coffee Cart</h3>
-            <p>Coffee · Tea</p>
-          </div>
+        <!-- EXTRA OPTIONS -->
+        <div class="food-card" onclick="openMenu('pizza')">
+          <img src="pizza.jpg" />
+          <h3>Pizza Van</h3>
+          <p>Pizza · Drinks</p>
         </div>
 
-        <div
-          class="card"
-          onclick="
-            openMenu('Sweet Stand', [
-              'Waffles',
-              'Crepes',
-              'Chocolate',
-              'Ice Cream',
-            ])
-          "
-        >
-          <img
-            src="https://images.unsplash.com/photo-1505253213348-cd54c92b37a0"
-          />
-          <div class="card-text">
-            <h3>Sweet Stand</h3>
-            <p>Desserts · Candy</p>
-          </div>
+        <div class="food-card" onclick="openMenu('coffee')">
+          <img src="coffee.jpg" />
+          <h3>Coffee Cart</h3>
+          <p>Espresso · Pastries</p>
         </div>
 
-        <div
-          class="card"
-          onclick="
-            openMenu('Beer Tent', ['Lager', 'IPA', 'Cider', 'Soft Drinks'])
-          "
-        >
-          <img
-            src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b"
-          />
-          <div class="card-text">
-            <h3>Beer Tent</h3>
-            <p>Beer · Drinks</p>
-          </div>
+        <div class="food-card" onclick="openMenu('bbq')">
+          <img src="bbq.jpg" />
+          <h3>BBQ Grill</h3>
+          <p>Ribs · Drinks</p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- MENU POPUP -->
-    <div id="menu" class="modal">
-      <div class="modal-box">
+    <!-- POPUP MENU -->
+    <div id="menuPopup" class="popup">
+      <div class="popup-content">
         <span class="close" onclick="closeMenu()">&times;</span>
         <h2 id="menuTitle"></h2>
-        <ul id="menuList"></ul>
+        <ul id="menuItems"></ul>
       </div>
     </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <h2>Contact</h2>
+      <p>Phone +46 79 - 334 95 49</p>
+      <p>Contact form</p>
+      <p>More contact information</p>
+    </footer>
 
     <script src="script.js"></script>
   </body>
