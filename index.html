@@ -1,7 +1,664 @@
-</< HTML
-    <!DOCTYPE html>
-  <html>
-    <body>
-      <p>Test</p>
-    </body>
-  </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>VALPURGIS | Spring Fire Festival in Jönköping</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <style>
+    /* ============================================
+       VALPURGIS HOMEPAGE - MATCHING TEAM STYLES
+       ============================================ */
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #FFFBF5;
+      color: #1e1e2a;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* Color variables */
+    :root {
+      --flame-orange: #E85D04;
+      --ember-orange: #F48C06;
+      --warm-light: #FFE6C7;
+      --deep-navy: #1E2A3E;
+      --card-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+      --transition: all 0.25s ease;
+    }
+
+    /* Skip link for accessibility */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--flame-orange);
+      color: white;
+      padding: 8px;
+      z-index: 100;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* Container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ===== HEADER & NAVIGATION (matching classmates' style) ===== */
+    .topbar {
+      background-color: var(--deep-navy);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--ember-orange);
+    }
+
+    .logo .flame {
+      display: inline-block;
+      width: 24px;
+      height: 28px;
+      background: linear-gradient(135deg, var(--flame-orange), #FF8C00);
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      margin-right: 8px;
+      transform: rotate(15deg);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      justify-content: flex-end;
+      margin-top: 0.5rem;
+    }
+
+    .nav-links a {
+      color: #f0f0f0;
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      padding: 0.25rem 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+      color: var(--ember-orange);
+      border-bottom-color: var(--ember-orange);
+    }
+
+    /* Buttons */
+    .btn-primary {
+      display: inline-block;
+      background-color: var(--flame-orange);
+      color: white;
+      font-weight: 600;
+      padding: 0.8rem 2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn-primary:hover {
+      background-color: #c45100;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(232, 93, 4, 0.2);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--flame-orange);
+      color: var(--flame-orange);
+      border-radius: 40px;
+      padding: 0.5rem 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-outline:hover {
+      background: var(--flame-orange);
+      color: white;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #FCE5C0 0%, #FFF0DF 100%);
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--deep-navy);
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #2c3e44;
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat strong {
+      font-size: 1.5rem;
+      color: var(--flame-orange);
+      display: block;
+    }
+
+    /* Section Titles */
+    section {
+      padding: 3rem 0 2rem 0;
+      scroll-margin-top: 80px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--deep-navy);
+      border-left: 6px solid var(--flame-orange);
+      padding-left: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Info Grid */
+    .info-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .info-card {
+      flex: 2;
+      background: white;
+      padding: 2rem;
+      border-radius: 1.5rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .map-preview {
+      flex: 1.2;
+      background: #EDE9E0;
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: var(--card-shadow);
+    }
+
+    .map-placeholder {
+      background: #CDD5DF;
+      border-radius: 1rem;
+      padding: 1rem;
+      margin: 1rem 0;
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .fun-fact {
+      background: #FFE6C7;
+      border-radius: 1rem;
+      padding: 1rem;
+      margin-top: 1.2rem;
+    }
+
+    /* Events Section */
+    .event-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    .event-card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+      border-left: 5px solid var(--ember-orange);
+    }
+
+    .event-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .event-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.8rem;
+    }
+
+    .event-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--deep-navy);
+    }
+
+    .event-time {
+      background: #FFE5CC;
+      padding: 0.3rem 0.9rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #b23c00;
+    }
+
+    .event-location {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0.5rem 0;
+      color: #4a5568;
+      font-size: 0.9rem;
+    }
+
+    .event-desc {
+      margin: 0.8rem 0 1rem 0;
+      color: #2d3748;
+    }
+
+    .event-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .icon-btn {
+      background: #f2f0ea;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .icon-btn:hover {
+      background: var(--ember-orange);
+      color: white;
+    }
+
+    /* Toast Message */
+    .toast-msg {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--deep-navy);
+      color: #ffeedd;
+      padding: 0.7rem 1.5rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.2s;
+      pointer-events: none;
+    }
+
+    /* Footer (matching classmates' style) */
+    footer {
+      background-color: var(--deep-navy);
+      color: #cbd5e1;
+      padding: 2rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0.5rem 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .info-grid { flex-direction: column; }
+      .section-title { font-size: 1.7rem; }
+      .nav-links { justify-content: center; margin-top: 1rem; }
+      .hero-stats { gap: 1.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 1.8rem; }
+      .event-header { flex-direction: column; gap: 0.5rem; }
+      .event-title { font-size: 1.2rem; }
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--flame-orange);
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <div class="toast-msg" id="toastMsg">✅ Added to calendar!</div>
+
+  <!-- HEADER (matching classmates' VALPURGIS style) -->
+  <header class="topbar">
+    <div class="logo">
+      <span class="flame"></span> VALPURGIS
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="map.html">Map & Events</a>
+      <a href="food.html">Food</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="container">
+        <h1>Welcome the Spring<br> with <span style="color:#E85D04;">Fire & Community</span></h1>
+        <p>Discover Valborg – Sweden's most vibrant celebration of light, bonfires, and the arrival of spring. Join students and locals in Jönköping for an unforgettable experience.</p>
+        <a href="#events" class="btn-primary"><i class="fas fa-fire"></i> Explore Events</a>
+        <div class="hero-stats">
+          <div class="stat"><strong>✨ 81%</strong> curious to learn</div>
+          <div class="stat"><strong>📅 30 April</strong> main celebration</div>
+          <div class="stat"><strong>🔥 3+ events</strong> bonfire & music</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFO SECTION -->
+    <section id="info">
+      <div class="container">
+        <h2 class="section-title">What is Valborg? 🔥</h2>
+        <div class="info-grid">
+          <div class="info-card">
+            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Walpurgis Night tradition</h3>
+            <p>Valborg (Walpurgis Night) is a Swedish spring festival celebrated on <strong>April 30th</strong>. Communities gather around massive bonfires, listen to choirs, and welcome warmer days. For international students, it's a wonderful introduction to Nordic culture.</p>
+            <p style="margin-top: 1rem;">📊 <strong>Our UX research:</strong> 56.3% of international students didn't know about Valborg, but <strong>87.5%</strong> would find a dedicated website useful. That's why we built this guide — to make traditions accessible and fun!</p>
+            <p><i class="fas fa-users"></i> Target audience: International & local students in Jönköping, young adults aged 20-30 seeking events, food, and community.</p>
+            <div class="fun-fact" id="funFactDiv">
+              <i class="fas fa-lightbulb"></i> <strong>Did you know?</strong> The bonfire tradition symbolizes warding off evil spirits and welcoming the light of spring.
+            </div>
+          </div>
+          <div class="map-preview">
+            <i class="fas fa-map-marked-alt" style="font-size: 2rem; color: var(--flame-orange);"></i>
+            <h3>📍 Main location</h3>
+            <p>Rådhusparken & Lake Vättern shore, Jönköping</p>
+            <div class="map-placeholder" aria-label="Map showing event area" role="img">
+              <i class="fas fa-map" style="font-size: 2.5rem; color: var(--deep-navy);"></i>
+              <div style="background: #fef7e0; width: 100%; border-radius: 12px; padding: 0.3rem;">🗺️ Bonfire zone · Food stalls · Main stage</div>
+              <i class="fas fa-location-dot" style="color:#E85D04;"></i> <span style="font-size:0.8rem;">Meeting point: Park entrance</span>
+            </div>
+            <button class="btn-outline" onclick="alert('📍 Address: Rådhusparken, 553 15 Jönköping. Follow signs to the bonfire area!')">
+              <i class="fas fa-directions"></i> Get directions
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS SECTION -->
+    <section id="events">
+      <div class="container">
+        <h2 class="section-title">📅 Valborg Schedule & Events</h2>
+        <div class="event-list" id="eventListContainer"></div>
+        <p style="margin-top: 1rem; text-align: center; font-size: 0.85rem;">
+          <i class="fas fa-calendar-plus"></i> Click "Add to Calendar" to save events — share with friends!
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (matching classmates' style) -->
+  <footer>
+    <p>Contact: +46 79-334 95 49</p>
+    <p>Contact Form</p>
+    <p>More Contact Information</p>
+  </footer>
+
+  <script>
+    // ============================================
+    // JAVASCRIPT - Events, Calendar, and Interactions
+    // ============================================
+    
+    // Event data
+    const eventsData = [
+      {
+        id: 1,
+        title: "🌼 Spring Picnic & Opening Ceremony",
+        start: "20260430T150000",
+        end: "20260430T170000",
+        startReadable: "April 30, 15:00 – 17:00",
+        location: "Rådhusparken Central Lawn, Jönköping",
+        description: "Traditional opening speech, live folk music, and Swedish fika. Bring a blanket and enjoy the first spring picnic with students."
+      },
+      {
+        id: 2,
+        title: "🎶 Choir & Spring Speeches",
+        start: "20260430T180000",
+        end: "20260430T193000",
+        startReadable: "April 30, 18:00 – 19:30",
+        location: "Rådhusparken Main Stage",
+        description: "Experience classic Valborg choir singing and welcoming speeches. A beautiful cultural moment just before the bonfire."
+      },
+      {
+        id: 3,
+        title: "🔥 The Great Bonfire Lighting",
+        start: "20260430T210000",
+        end: "20260430T223000",
+        startReadable: "April 30, 21:00 – 22:30",
+        location: "Lake Vättern Shore, near Strandängarna",
+        description: "The highlight of Valborg! Join hundreds as we light the massive bonfire, celebrate with music and community spirit."
+      }
+    ];
+
+    function showToast(message) {
+      const toast = document.getElementById("toastMsg");
+      toast.textContent = message;
+      toast.style.opacity = "1";
+      setTimeout(() => {
+        toast.style.opacity = "0";
+        setTimeout(() => {
+          toast.textContent = "✅ Added to calendar!";
+        }, 300);
+      }, 2200);
+    }
+
+    function downloadICSFile(event) {
+      const icsContent = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//ValpurGIS//Event Calendar//EN",
+        "BEGIN:VEVENT",
+        `SUMMARY:${event.title}`,
+        `DTSTART:${event.start}`,
+        `DTEND:${event.end}`,
+        `LOCATION:${event.location}`,
+        `DESCRIPTION:${event.description} – Valborg celebration in Jönköping`,
+        "END:VEVENT",
+        "END:VCALENDAR"
+      ].join("\r\n");
+      
+      const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
+      const link = document.createElement("a");
+      const filename = `Valborg_${event.title.replace(/[^a-z0-9]/gi, '_')}.ics`;
+      link.href = URL.createObjectURL(blob);
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(link.href);
+      showToast(`✅ "${event.title}" added to your calendar!`);
+    }
+
+    function shareEventDetails(event) {
+      const shareText = `🎉 ${event.title}\n📅 ${event.startReadable}\n📍 ${event.location}\n🔗 ${event.description}\n— via VALPURGIS Guide`;
+      navigator.clipboard.writeText(shareText).then(() => {
+        showToast(`📋 Event details copied: ${event.title}`);
+      }).catch(() => {
+        alert("Could not copy. You can manually share this event.");
+      });
+    }
+
+    function renderEvents() {
+      const container = document.getElementById("eventListContainer");
+      if (!container) return;
+      
+      container.innerHTML = "";
+      
+      eventsData.forEach(event => {
+        const card = document.createElement("div");
+        card.className = "event-card";
+        card.innerHTML = `
+          <div class="event-header">
+            <div class="event-title">${event.title}</div>
+            <div class="event-time"><i class="far fa-clock"></i> ${event.startReadable}</div>
+          </div>
+          <div class="event-location"><i class="fas fa-map-marker-alt"></i> ${event.location}</div>
+          <div class="event-desc">${event.description}</div>
+          <div class="event-actions">
+            <button class="icon-btn add-calendar" data-id="${event.id}"><i class="fas fa-calendar-plus"></i> Add to Calendar</button>
+            <button class="icon-btn share-event" data-id="${event.id}"><i class="fas fa-share-alt"></i> Share Event</button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+      
+      document.querySelectorAll(".add-calendar").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const id = parseInt(btn.getAttribute("data-id"));
+          const event = eventsData.find(e => e.id === id);
+          if (event) downloadICSFile(event);
+        });
+      });
+      
+      document.querySelectorAll(".share-event").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const id = parseInt(btn.getAttribute("data-id"));
+          const event = eventsData.find(e => e.id === id);
+          if (event) shareEventDetails(event);
+        });
+      });
+    }
+
+    // Active navigation highlighting on scroll
+    function setupScrollSpy() {
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll(".nav-links a");
+      
+      window.addEventListener("scroll", () => {
+        let current = "";
+        const scrollPos = window.scrollY + 100;
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionBottom = sectionTop + section.offsetHeight;
+          if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+            current = section.getAttribute("id");
+          }
+        });
+        
+        navLinks.forEach(link => {
+          link.style.borderBottomColor = "transparent";
+          if (link.getAttribute("href") === `#${current}`) {
+            link.style.borderBottomColor = "var(--ember-orange)";
+            link.style.color = "#FFD966";
+          } else if (link.getAttribute("href") !== "#" && !link.getAttribute("href").startsWith("#")) {
+            link.style.color = "#f0f0f0";
+          }
+        });
+      });
+    }
+
+    // Random fun fact button
+    function addFunFactButton() {
+      const funFactDiv = document.getElementById("funFactDiv");
+      if (funFactDiv && !document.getElementById("randomFactBtn")) {
+        const facts = [
+          "🔥 The largest Valborg bonfire in Sweden can reach over 10 meters high!",
+          "🎓 For students, Valborg marks the end of the spring semester and the start of exam celebrations.",
+          "🌸 Traditionally, songs about spring are sung before lighting the fire to chase away winter.",
+          "📜 The name 'Valborg' comes from Saint Walpurga, an 8th-century English missionary.",
+          "🍓 Many Swedes enjoy the first strawberries of the season during Valborg.",
+          "🎵 'Winter has fled, spring is here' is a classic Valborg song.",
+          "🕯️ Some communities also light smaller bonfires in gardens."
+        ];
+        
+        const factBtn = document.createElement("button");
+        factBtn.className = "btn-outline";
+        factBtn.id = "randomFactBtn";
+        factBtn.style.marginTop = "0.5rem";
+        factBtn.innerHTML = '<i class="fas fa-lightbulb"></i> Show me another fact';
+        
+        const factDisplay = document.createElement("p");
+        factDisplay.id = "factDisplay";
+        factDisplay.style.marginTop = "0.5rem";
+        factDisplay.style.fontSize = "0.85rem";
+        factDisplay.style.fontStyle = "italic";
+        
+        funFactDiv.appendChild(factBtn);
+        funFactDiv.appendChild(factDisplay);
+        
+        factBtn.addEventListener("click", () => {
+          const randomIndex = Math.floor(Math.random() * facts.length);
+          factDisplay.textContent = `✨ ${facts[randomIndex]}`;
+        });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderEvents();
+      setupScrollSpy();
+      addFunFactButton();
+    });
+  </script>
+</body>
+</html>
