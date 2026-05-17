@@ -1,29 +1,25 @@
-const menus = {
-  snack: ["Popcorn", "Cotton Candy", "Soft Drinks", "Chips"],
-  street: ["Cheeseburger", "Veggie Burger", "Fries", "Sodas"],
-  hotdog: ["Classic Hotdog", "Cheese Hotdog", "Chili Dog", "Drinks"],
-  langos: ["Classic Langos", "Garlic Langos", "Cheese Langos"],
-  pizza: ["Margherita", "Pepperoni", "Veggie", "Garlic Bread"],
-  coffee: ["Espresso", "Latte", "Cappuccino", "Croissants"],
-  bbq: ["BBQ Ribs", "Pulled Pork", "Cornbread", "Iced Tea"],
+function openFoodModal(title, desc, location, price, image) {
+  document.getElementById("foodModal").style.display = "flex";
+
+  document.getElementById("modalTitle").innerText = title;
+
+  document.getElementById("modalDesc").innerText = desc;
+
+  document.getElementById("modalLocation").innerText = location;
+
+  document.getElementById("modalPrice").innerText = price;
+
+  document.getElementById("modalImg").src = image;
+}
+
+function closeFoodModal() {
+  document.getElementById("foodModal").style.display = "none";
+}
+
+window.onclick = function (e) {
+  const modal = document.getElementById("foodModal");
+
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
 };
-
-function openMenu(type) {
-  document.getElementById("menuTitle").innerText =
-    type.charAt(0).toUpperCase() + type.slice(1) + " Menu";
-
-  const list = document.getElementById("menuItems");
-  list.innerHTML = "";
-
-  menus[type].forEach((item) => {
-    const li = document.createElement("li");
-    li.innerText = item;
-    list.appendChild(li);
-  });
-
-  document.getElementById("menuPopup").style.display = "flex";
-}
-
-function closeMenu() {
-  document.getElementById("menuPopup").style.display = "none";
-}
