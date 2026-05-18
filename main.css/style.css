@@ -154,6 +154,26 @@ body {
   color: var(--navy);
 }
 
+.food-card {
+  transition: all 0.35s ease;
+  border: 2px solid transparent;
+  overflow: hidden;
+}
+
+.food-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  border-color: #ff8c00;
+  box-shadow: 0 20px 45px rgba(255, 140, 0, 0.35);
+}
+
+.food-card img {
+  transition: transform 0.45s ease;
+}
+
+.food-card:hover img {
+  transform: scale(1.08);
+}
+
 /* MODAL */
 
 .food-modal {
