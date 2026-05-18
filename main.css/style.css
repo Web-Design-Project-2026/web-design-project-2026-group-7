@@ -260,15 +260,11 @@ body {
 /* FOOTER */
 
 footer {
-  background: var(--navy);
-
-  color: white;
-
-  text-align: center;
-
+  background-color: var(--navy);
+  color: #cbd5e1;
   padding: 2rem;
-
-  margin-top: 4rem;
+  margin-top: 3rem;
+  text-align: center;
 }
 
 /* TABLET */
@@ -333,4 +329,171 @@ footer {
   background: #c94d00;
 
   transform: translateY(-2px);
+}
+
+#map-container {
+  position: relative; /* for the markers*/
+  width: 100%;
+  max-width: 1200px;
+  margin: 0px auto;
+  overflow: hidden; /* markers stay in the map image*/
+  border: 4px solid var(--navy);
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+#static-map {
+  width: 100%; /*responsive map*/
+  height: auto;
+  display: block;
+}
+
+.map-marker {
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  width: 45px;
+  height: 45px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.map-marker:hover {
+  transform: translate(-50%, -50%) scale(1.3);
+  z-index: 10;
+}
+
+.bonfire-marker {
+  background-color: rgb(63, 63, 63);
+  border: 2px solid red;
+  top: 60%;
+  left: 45%;
+}
+
+.food-arrow {
+  color: var(--navy);
+  text-decoration: none;
+  margin-left: 12px;
+  font-size: 1.8rem;
+  transition: color 0.2s ease;
+}
+
+.food-arrow:hover {
+  color: orange;
+}
+
+.music-marker {
+  background-color: rgb(63, 63, 63);
+  border: 2px solid blue;
+  top: 50%;
+  left: 30%;
+}
+
+.student-marker {
+  background-color: rgb(63, 63, 63);
+  border: 2px solid green;
+  top: 40%;
+  left: 65%;
+}
+
+.food-marker {
+  background-color: rgb(63, 63, 63);
+  border: 2px solid orange;
+  top: 75%;
+  left: 70%;
+}
+
+.category {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.5rem;
+  background-color: #fffbf5;
+  border-radius: 15px;
+}
+
+.category-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.event-details {
+  padding: 4rem 0;
+}
+
+.detail-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  margin-bottom: 4rem;
+  padding: 2.5rem;
+  border-radius: 25px;
+  border: 1px solid transparent;
+}
+
+.detail-section:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.detail-image {
+  width: 400px;
+  max-width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.detail-text {
+  flex: 1;
+}
+
+.detail-text h2 {
+  font-size: 2.2rem;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.detail-text p {
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+  color: #4a4a4a;
+}
+
+/*adapted using:https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@keyframes*/
+@keyframes flashOrange {
+  0% {
+    color: inherit;
+  }
+  50% {
+    color: orange;
+  }
+  100% {
+    color: inherit;
+  }
+}
+
+.highlight-title {
+  animation: flashOrange 1s ease-in-out 2;
+}
+
+@media (max-width: 768px) {
+  .detail-section,
+  .detail-section:nth-child(even) {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
 }
